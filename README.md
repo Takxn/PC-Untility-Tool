@@ -111,6 +111,8 @@ Dieses Projekt steht unter der **MIT-Lizenz**. Siehe [LICENSE](LICENSE) für Det
 <div align="center">
   <sub>Mit ❤️ und Electron gebaut</sub>
 </div>
-<img width="2880" height="1824" alt="image" src="https://github.com/user-attachments/assets/2eb0762a-1b21-4e2a-9be3-d110ee0dcdb4" />
+<img width="2880" height="1824" alt="image" src="https://github.com/user-attachments/assets/07137aee-054a-460a-af68-6f93c003f515" />
 
-<img width="2880" height="1824" alt="image" src="https://github.com/user-attachments/assets/a7809d59-f4aa-4f70-9b38-a9fcc28fe586" />
+
+<img width="2880" height="1824" alt="image" src="https://github.com/user-attachments/assets/6c819b6c-85e0-4a51-9233-aef72071ef8e" />
+
