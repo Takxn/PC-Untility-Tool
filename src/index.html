@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'" />
+  <title>PC Utility Tool</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <canvas id="particles-canvas" class="particles-canvas" aria-hidden="true"></canvas>
+  <div class="app">
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">◆</span>
+        <h1>PC Utility Tool</h1>
+      </div>
+      <nav class="tabs" role="tablist">
+        <button type="button" class="tab active" data-tab="system" role="tab">Systeminfos</button>
+        <button type="button" class="tab" data-tab="logs" role="tab">Logs</button>
+        <button type="button" class="tab" data-tab="settings" role="tab">Einstellungen</button>
+        <button type="button" class="tab" data-tab="update" role="tab">Update</button>
+      </nav>
+    </header>
+
+    <main class="content">
+      <section id="panel-system" class="panel active" role="tabpanel">
+        <div class="panel-head">
+          <h2>Systeminformationen</h2>
+          <button type="button" class="btn btn-ghost" id="btn-refresh-system">Aktualisieren</button>
+        </div>
+        <div id="system-content" class="system-grid">
+          <div class="loading">Lade Systeminfos…</div>
+        </div>
+      </section>
+
+      <section id="panel-logs" class="panel" role="tabpanel" hidden>
+        <div class="panel-head">
+          <h2>Logs</h2>
+          <button type="button" class="btn btn-ghost danger" id="btn-clear-logs">Logs leeren</button>
+        </div>
+        <div class="logs-toolbar">
+          <span class="logs-count" id="logs-count">0 Einträge</span>
+        </div>
+        <div class="logs-container">
+          <div id="logs-list" class="logs-list"></div>
+        </div>
+      </section>
+
+      <section id="panel-settings" class="panel" role="tabpanel" hidden>
+        <div class="panel-head">
+          <h2>Einstellungen</h2>
+        </div>
+        <div class="settings-form">
+          <div class="setting-row">
+            <label for="setting-theme">Design</label>
+            <select id="setting-theme" class="input">
+              <option value="dark">Dark</option>
+              <option value="light">Light</option>
+            </select>
+          </div>
+          <div class="setting-row">
+            <label for="setting-logs-limit">Max. Log-Einträge</label>
+            <input type="number" id="setting-logs-limit" class="input" min="50" max="1000" value="200" />
+          </div>
+          <div class="setting-row">
+            <label for="setting-start-minimized">Beim Start minimieren</label>
+            <input type="checkbox" id="setting-start-minimized" class="input checkbox" />
+          </div>
+          <button type="button" class="btn btn-primary" id="btn-save-settings">Speichern</button>
+        </div>
+      </section>
+
+      <section id="panel-update" class="panel" role="tabpanel" hidden>
+        <div class="panel-head">
+          <h2>Update</h2>
+          <button type="button" class="btn btn-primary" id="btn-check-update">Auf Updates prüfen</button>
+        </div>
+        <div id="update-content" class="update-card">
+          <p class="muted">Aktuelle Version: <strong id="current-version">–</strong></p>
+          <p id="update-message" class="muted">Klicke auf „Auf Updates prüfen“, um nach einer neuen Version zu suchen.</p>
+          <div id="update-actions" class="update-actions" hidden>
+            <button type="button" class="btn btn-primary" id="btn-download-update">Update herunterladen</button>
+            <button type="button" class="btn btn-accent" id="btn-install-update" hidden>Jetzt neu starten & installieren</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>PC Utility Tool v1.0.0</span>
+    </footer>
+  </div>
+  <script src="renderer.js"></script>
+</body>
+</html>
